@@ -6,8 +6,8 @@
 <div id="speakStatusIndicator"></div>
 
 <div id="test_speak">
-<input type="button" value="speak" onclick="crx.tts.speak();">
-<input type="button" value="stop" onclick="crx.tts.stop();">
+<input type="button" value="speak" id="test_speak_speak">
+<input type="button" value="stop" id="test_speak_stop">
 <ul>
 <li>utterance:<br>
 <textarea id="test_speak_utterance" style="height: 300px; width: 400px;"></textarea>
@@ -20,46 +20,6 @@
 </ul>
 </ul>
 </div>
-<script type="text/javascript">
-var crx = {tts : {}};
-crx.tts.speak = (function()
-{
-	chrome.tts.speak(document.getElementById("test_speak_utterance").value, 
-	{
-		enqueue : document.getElementById("test_speak_options_enqueue").checked, 
-		voiceName : document.getElementById("test_speak_options_voiceName").value
-	});
-});
-
-crx.tts.stop = (function()
-{
-	chrome.tts.stop();
-});
-
-crx.tts.init = (function()
-{
-	chrome.tts.getVoices(function(voices)
-	{
-		for(var i = 0; i < voices.length; ++i)
-		{
-			var option = document.createElement("option");
-			option.text = option.value = voices[i].voiceName;
-			document.getElementById("test_speak_options_voiceName").add(option);
-		}
-	});
-});
-
-function updateSpeakStatus()
-{
-	chrome.tts.isSpeaking(function(speaking)
-	{
-		document.getElementById("speakStatusIndicator").innerText = speaking ? "Speaking..." : "Idle";
-	});
-	
-	window.setTimeout(updateSpeakStatus, 500);
-}
-updateSpeakStatus();
-crx.tts.init();
-</script>
+<script type="text/javascript" src="tts.js"></script>
 </body>
 </html>
