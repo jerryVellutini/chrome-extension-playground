@@ -3,16 +3,6 @@
 <title>Chrome Extension Playground Background Page</title>
 </head>
 <body>
-<script type="text/javascript">
-function cb()
-{
-	console.log(arguments);
-}
-
-chrome.management.onInstalled.addListener(function()
-{
-	chrome.tabs.create( { url : "welcome.html" } );
-});
-</script>
+<script type="text/javascript" src="bg.js"></script>
 </body>
 </html>

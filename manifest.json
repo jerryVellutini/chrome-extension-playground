@@ -1,8 +1,7 @@
 {
 	"name"                   : "Chrome Extension Playground", 
 	"version"                : "0.0.0.1", 
-	"manifest_version"       : 2, //Will this field break existing extensions??
-	//"content_security_policy": "", 
+	"manifest_version"       : 2, 
 	"description"            : "An UNOFFICIAL extension designed for Chrome Extension Developers to learn and test Chrome Extension APIs.", 
 	"default_locale"         : "en", 
 	"homepage_url"           : "https://code.google.com/p/chrome-extension-playground/", 
@@ -42,7 +41,7 @@
 		"<all_urls>"
 		]
 /*
-	chrome_url_overrides:
+	"chrome_url_overrides":
 */
 /*
 	"content_scripts": 
@@ -52,13 +51,13 @@
 	themes (you may need to comment out other unrelated stuff)
 */
 /*
-	browser_action :
+	"browser_action" :
 */
 /*
-	page_action : 
+	"page_action" : 
 */
 /*
-	theme
+	"theme"
 */
 /*
 	"app" : 
