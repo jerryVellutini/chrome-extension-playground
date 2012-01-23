@@ -6,6 +6,10 @@
 	"default_locale"         : "en", 
 	"homepage_url"           : "https://code.google.com/p/chrome-extension-playground/", 
 	"background_page"        : "bg.html", 
+	"background"             : 
+	{
+		"scripts": ["bg.js"]
+	}, 
 	"offline_enabled"        : true, 
 	"options_page"           : "options.html", 
 /*
